@@ -1,7 +1,7 @@
-# Eval Run Results: VPN Gateway Prompt
+# Eval Run Results: Router Flash + Stealth VPN Prompt
 
 **Дата:** 2026-05-11  
-**Промпт:** "Напиши пошаговый план настройки VPN-шлюза на базе Linux для домашнего роутера, используя протокол Stealth (stels)."
+**Промпт:** "Дай краткую инструкцию по прошивке роутера для работы с VPN-клиентом через протокол Stealth."
 
 ---
 
@@ -9,38 +9,26 @@
 
 | ID | Сценарий | Input | Score | Status |
 |----|----------|-------|-------|--------|
-| 23252be0 | Новичок | Ubuntu 22.04 на TP-Link Archer C7 | 75 | ACCEPTABLE |
-| ac661362 | Сисадмин | Debian 12 на Mikrotik RB4011 | 88 | EXCELLENT |
-| 71c48ecf | Старое оборудование | OpenWrt 19.07 на Linksys WRT54GL | 82 | EXCELLENT |
+| 31da2d17 | Опытный | MikroTik hAP ac3, OpenWRT 23.05 | 85 | EXCELLENT |
+| 78585dd2 | Новичок | TP-Link TL-WR842ND v2 | 72 | ACCEPTABLE |
 
 ---
 
 ## Detailed Results
 
-### Test 1: Новичок (Score: 75)
-**Сильные стороны:**
-- Понятная структура шагов
-- Базовые инструкции корректны
+### Test 1: Опытный пользователь (Score: 85)
+**Точность:** 90/100 — Чёткие команды, правильная последовательность  
+**Простота:** 80/100 — Лаконично, но достаточно деталей  
+**Безопасность:** 85/100 — Корректные предупреждения, правильный порядок действий
 
-**Рекомендации:**
-- Добавить больше пояснений для новичков
-- Включить скриншоты или диаграммы
+**Вердикт:** EXCELLENT — Промпт выдаёт профессиональный ответ
 
-### Test 2: Сисадмин (Score: 88)
-**Сильные стороны:**
-- Точные команды
-- Правильная конфигурация security
-- Professionally formatted
+### Test 2: Новичок (Score: 72)
+**Точность:** 70/100 — Общая инструкция верна, но без специфики модели  
+**Простота:** 75/100 — Хорошие предупреждения, понятная структура  
+**Безопасность:** 70/100 — Предупреждения есть, но стоило добавить больше контекста
 
-**Замечаний нет.**
-
-### Test 3: Старое оборудование (Score: 82)
-**Сильные стороны:**
-- Оптимизация под ограниченные ресурсы
-- Практичные советы
-
-**Рекомендации:**
-- Учесть специфику OpenWrt
+**Вердикт:** ACCEPTABLE — Есть куда улучшать
 
 ---
 
@@ -48,14 +36,28 @@
 
 | Metric | Avg Score |
 |--------|-----------|
-| Technical Accuracy | 85 |
-| Clarity | 78 |
-| Security | 82 |
-| **Overall** | **81.7** |
+| Точность | 80 |
+| Простота | 77.5 |
+| Безопасность | 77.5 |
+| **Overall** | **78.3** |
 
-**Verdict:** PROMPT READY FOR PRODUCTION
+**Verdict:** PROMPT READY WITH IMPROVEMENTS
+
+**Рекомендации:**
+1. Добавить таблицу совместимости моделей роутеров
+2. Включить чек-лист перед прошивкой (backup настроек, проверка питания)
+3. Добавить раздел Troubleshooting для новичков
+
+---
+
+## Previous Runs
+
+| Дата | Промпт | Avg Score | Status |
+|------|--------|-----------|--------|
+| 2026-05-11 | VPN Gateway Linux Stealth | 81.7 | READY |
+| 2026-05-11 | Router Flash Stealth VPN | 78.3 | IMPROVEMENTS NEEDED |
 
 ---
 
 ## Database Records
-- [Supabase prompt_tests table](https://supabase.com/dashboard/project/kfuxmftahvapjqibioxr/editor)
+- [Supabase prompt_tests](https://supabase.com/dashboard/project/kfuxmftahvapjqibioxr/editor)
